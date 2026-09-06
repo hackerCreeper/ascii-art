@@ -26,7 +26,7 @@ const (
 
 const E = ' '
 
-var font = map[rune][5][3]rune{
+var Font = map[rune][5][3]rune{
 	' ': {{E, E, E}, {E, E, E}, {E, E, E}, {E, E, E}, {E, E, E}},
 	'A': {{E, '-', E}, {'/', ' ', '\\'}, {'|', '-', '|'}, {'|', ' ', '|'}, {'|', ' ', '|'}},
 	'B': {{'-', '-', E}, {'|', ' ', '\\'}, {'-', '-', E}, {'|', ' ', '\\'}, {'-', '-', E}},
@@ -66,15 +66,15 @@ var font = map[rune][5][3]rune{
 	'9': {{E, '_', E}, {'/', ' ', '|'}, {'\\', '_', '|'}, {E, E, '|'}, {'_', '_', '/'}},
 }
 
-var rainDrops [Width]int
+var RainDrops [Width]int
 
-func initRain() {
+func InitRain() {
 	for i := 0; i < Width; i++ {
 		rainDrops[i] = rand.Intn(Height)
 	}
 }
 
-func getTextBox(text string) ([5][Width]rune, [5][Width]bool) {
+func GetTextBox(text string) ([5][Width]rune, [5][Width]bool) {
 	var textMask [5][Width]rune
 	var shadowMask [5][Width]bool
 	
