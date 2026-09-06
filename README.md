@@ -1,1 +1,1 @@
-# ascii-art
+# ascii-art - a ASCII madness
